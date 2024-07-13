@@ -1,0 +1,11 @@
+themes:  
+  NHS:
+    url: "/themes/nhs"
+    class: c8-bg
+    title: NHS
+    description: NHS Statistics
+  BCI: 
+    url: "/themes/BCI"
+    class: c8-bg
+    title: BCI
+    description: BCI Data

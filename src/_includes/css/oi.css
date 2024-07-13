@@ -106,10 +106,10 @@ a.button:hover, button:hover, button:focus, a.button:focus { background-color: #
 .c2-bg, .c2-bg-hover:hover, .c2-bg:visited { background-color: #178CFF; color: black; }
 .c3-bg, .elsewhere .twitter:hover, .c3-bg-hover:hover, .c3-bg:visited { background-color: #00B6FF; color: black; }
 .c4-bg, .c4-bg-hover:hover, .c4-bg:visited, .seasonal-accent, .seasonal-accent:hover, .seasonal-accent:visited { background-color: #08DEF9; color: black; }
-.c5-bg, .c5-bg-hover:hover, .c5-bg:visited { background-color: #1DD3A7; color: black; }
-.c6-bg, .c6-bg-hover:hover, .c6-bg:visited { background-color: #0DBC37; color: black; }
-.c7-bg, .c7-bg-hover:hover, .c7-bg:visited { background-color: #67E767; color: black; }
-.c8-bg, .c8-bg-hover:hover, .c8-bg:visited { background-color: #722EA5; color: white; }
+.c5-bg, .c5-bg-hover:hover, .c5-bg:visited { background-color: #d31d1dcc; color: black; }
+.c6-bg, .c6-bg-hover:hover, .c6-bg:visited { background-color: #07631c; color: black; }
+.c7-bg, .c7-bg-hover:hover, .c7-bg:visited { background-color: #b95716; color: black; }
+.c8-bg, .c8-bg-hover:hover, .c8-bg:visited { background-color: #400c68; color: white; }
 .c9-bg, .c9-bg-hover:hover, .c9-bg:visited, .instagram:hover { background-color: #E6007C; color: white; }
 .c10-bg, .c10-bg-hover:hover, .c10-bg:visited, .flickr:hover { background-color: #EF3AAB; color: black; }
 .c11-bg, .c11-bg-hover:hover, .c11-bg:visited { background-color: #D73058; color: white; }
@@ -146,9 +146,9 @@ header nav ul > li > a:hover, header nav ul > li > a:focus { background: white; 
 
 .grid { display: grid; grid-template-columns: repeat(2,1fr); grid-gap: 1em; }
 .grid .pane { background: #f9f9f9; }
-
+/* 
 .grid-list { display: grid; grid-template-columns: repeat(3,1fr); grid-gap: 0.5em; list-style: none; margin: 0; margin-bottom: 2em; }
-.grid-list > li > a { padding: 1em; background: #dfdfdf; text-decoration: none; display: block; text-align: center; height: 100%; }
+.grid-list > li > a { padding: 1em; text-decoration: none; display: block; text-align: center; height: 100%; } */
 
 .legend { margin-bottom: 1em; text-align: center; }
 .legend .legend-item { display: inline-block; line-height: 1em; margin-right: 1em; cursor: pointer; }
@@ -164,7 +164,6 @@ footer hr.about { margin: 32px 0; border: 0; border-top:1px solid #444; }
 
 @media only screen and (max-width: 1080px) {
 	.grid { grid-template-columns: 100%; }
-	.grid-list { grid-template-columns: repeat(2,1fr); grid-gap: 0.25em; }
 }
 
 @media only screen and (max-width: 800px) {

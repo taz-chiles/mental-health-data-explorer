@@ -6,14 +6,13 @@ import postcss from "lume/plugins/postcss.ts";
 
 const site = lume({
   src: './src',
-  // TODO Update this with the proper URL
-  location: new URL("https://taz-chiles/github.io/mental-health-data-explorer/"),
+  location: new URL("https://taz-chiles.github.io/mental-health-explorer/"),
 });
 
 site.use(base_path());
 site.use(metas({
   defaultPageData: {
-    title: 'title', // Use the `date` value as fallback.
+    title: 'Mental Health Explorer', // Use the `date` value as fallback.
   },
 }));
 site.use(date());
