@@ -7,7 +7,7 @@ import postcss from "lume/plugins/postcss.ts";
 const site = lume({
   src: './src',
   // TODO Update this with the proper URL
-  location: new URL("https://open-innovations.github.io/oi-lume-template/"),
+  location: new URL("https://taz-chiles/github.io/mental-health-data-explorer/"),
 });
 
 site.use(base_path());
