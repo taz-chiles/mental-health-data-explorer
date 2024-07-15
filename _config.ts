@@ -19,6 +19,8 @@ site.use(date());
 site.use(postcss({}));
 
 site.copy('CNAME');
+site.copy('assets/images');
+site.copy('assets/css/fonts');
 site.copy('.nojekyll');
 
 export default site;
