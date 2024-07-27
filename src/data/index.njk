@@ -1,0 +1,19 @@
+---
+title: Data
+page: data
+---
+
+<p>
+    This is where the data will live.
+</p>
+
+{% comp "dashboard.panels", { columns: 4 } %}
+
+	{% comp "dashboard.pane", { bg: "black", fg: 'white', link: "/data/nhs/" }%}
+
+    <h2>NHS Statistics</h2>
+
+
+
+    {% endcomp %}
+{% endcomp %}

@@ -1,0 +1,77 @@
+---
+title: NHS
+description: |
+  Presenting NHS statistics.
+---
+
+{% comp "dashboard.panels", { columns: 4 } %}
+	{% comp "dashboard.pane", { bg: "black", fg: 'white', link: "/data/nhs/" }%}
+  <h2>Mental Health Data Hub</h2>
+  {% endcomp %} 
+{% endcomp %} 
+
+
+
+{{ comp.oi.viz.chart.line({ config: {
+      title: 'Total online audience',
+      categories: search.data('working/social-media').all_weekly.columns.week_ending,
+      width: 25,
+      height: 8,
+      text: { colour: 'white' },
+      xAxis: {
+          title: 'Week ending (Sunday)',
+          titleOffset: 4.2,
+          labelRotate: 35,
+          majorTick: 4,
+          formatter: dateFormatter
+      },
+      yAxis: {
+          title: 'Total Audience',
+          titleOffset: 3.4,
+          majorTick: 5000
+      },
+      plotArea: {
+          yMin: 0,
+          yMax: 50000,
+          colour: 'var(--l23-dark-blue-grey)'
+      },
+      padding: {
+          left: 4,
+          bottom: 5
+      },
+      series: [
+          {
+          id: "all", label: "All",
+          yValues: search.data('metrics/social-media').all_weekly.columns.audience_last,
+          colour: all_colour,
+          markerOptions: { s: 5 }
+          },
+          {
+          id: "twitter", label: "Twitter",
+          yValues: search.data('metrics/social-media').service.twitter_weekly.columns.audience_last,
+          colour: twitter_colour,
+          markerOptions: { s: 5 }
+          },
+          {
+          id: "instagram", label: "Instagram",
+          yValues: search.data('metrics/social-media').service.instagram_weekly.columns.audience_last,
+          colour: instagram_colour,
+          markerOptions: { s: 5 }
+          },
+          {
+          id: "facebook", label: "Facebook",
+          yValues: search.data('metrics/social-media').service.facebook_weekly.columns.audience_last,
+          colour: facebook_colour,
+          markerOptions: { s: 5 }
+          },
+          {
+          id: "linkedin", label: "Linkedin",
+          yValues: search.data('metrics/social-media').service.linkedin_weekly.columns.audience_last,
+          colour: linkedin_colour,
+          markerOptions: { s: 5 }
+          }
+      ],
+      legend: {
+          width: "20em"
+      }
+    } }) | safe }}

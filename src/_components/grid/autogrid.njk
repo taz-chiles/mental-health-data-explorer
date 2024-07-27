@@ -1,0 +1,18 @@
+---
+# https://css-tricks.com/a-responsive-grid-layout-with-no-media-queries/
+css: |
+  .auto-grid {
+    --auto-grid-min-size: 16rem;
+    --auto-grid-gap: 0.5rem;
+    display: flex;
+    flex-wrap:wrap;
+    & > * {
+      margin: 0;
+    }
+  }
+---
+<div class="auto-grid"
+  style="
+  ">
+  {{- content | safe -}}
+</div>
