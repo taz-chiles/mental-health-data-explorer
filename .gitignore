@@ -2,4 +2,6 @@ _site/
 
 deno.lock
 
+.DS_Store
+
 mental-health-data-env/
