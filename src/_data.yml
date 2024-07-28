@@ -1,11 +1,6 @@
 layout: template/page.njk
 date: Git Last Modified
 
-# Override the site logo colour here. Any CSS colour will work.
-logo_colour: black
-
-header_class: c8-bg
-
 # Automatically adds meta and social tags 
 # See https://lume.land/plugins/metas/
 metas:

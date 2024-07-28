@@ -61,8 +61,19 @@
   :root {
     --main-fontstack: Roboto,sans-serif;
     --title-fontstack: Roboto,sans-serif;
-  }
-
+	--main-light-blue: #052244;
+	--main-dark-blue: #082046;
+	--1: #97d4ee;
+	--2: #76e994;
+	--3: #8718a9;
+	--4: #c98cca;
+	--5: #404788;
+	--6: #29af7f;
+	--7: #3ba4b8; 
+	--8: #a67cf3;
+ 
+  } 
+ 
 html, body {
 	padding: 0px;
 	margin: 0px;
@@ -85,7 +96,7 @@ html, body {
 .b5-bg, .off label { background-color: #dfdfdf; color: black!important; }
 .b6-bg { background-color: #ffffff; color: black!important; }
 
-
+.main-blue { background-color: var(--main-light-blue);}
 
 h1,h2,h3,h4, .title, .subtitle { font-family: var(--title-fontstack); line-height: 1em; }
 h1, .title { font-size: 2em; margin-top: 1em; font-weight: 600; }
@@ -138,10 +149,9 @@ section { padding: 2em 0; }
 
 .grid { display: grid; grid-template-columns: repeat(2,1fr); grid-gap: 1em; }
 .grid .pane { 
-	background: #ffffff; 
+	background: var(--main-dark-blue); 
 	justify-content: center;
 	min-height:200px;
-	background: black;
 	color: #ffffff;
 }
 .grid .pane h2 { 
