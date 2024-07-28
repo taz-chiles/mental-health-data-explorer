@@ -4,74 +4,189 @@ description: |
   Presenting NHS statistics.
 ---
 
-{% comp "dashboard.panels", { columns: 4 } %}
-	{% comp "dashboard.pane", { bg: "black", fg: 'white', link: "/data/nhs/" }%}
-  <h2>Mental Health Data Hub</h2>
-  {% endcomp %} 
+<p>The visualisations on this page present data on NHS-funded mental health services in the UK, presenting data published by the National Health Service.</p>
+
+
+<h2>NHS Secondary Mental Health Services</h2>
+
+<p>The charts below show the proportion of the UK population in contact with NHS funded secondary mental health, learning disabilities and autism services by gender and age group, 2017-18 to 2022-23.</p>
+
+<p>Data comes from the <a href="https://digital.nhs.uk/data-and-information/publications/statistical/mental-health-bulletin/2022-23-annual-report">Mental Health Bulletin, 2022-23 Annual report</a>, published 22 Feb 2024.</p>
+
+<h3>Percentage of population accessing NHS secondary mental health services, by age and gender.</h3>
+
+{% comp "dashboard.panels", { columns: 1 } %}
+
+{% comp "dashboard.pane", { bg: "black", fg: 'white' }%}
+<h3>Percentage of adult women accessing secondary mental health services, by age</h3>
+	{% comp 'oi.chart.line', { "config": 
+	{
+		"data": "nhs.mental_health_bulletin.secondary_care_gender_age",
+		width: 850,
+    	height: 500,
+		"legend": {
+			"show": true,
+			"direction": "horizontal"
+		},
+		"axis": {
+			"x": {
+				"title": {
+					"label": "Year"
+				},
+				"grid": {
+					"stroke-dasharray": "6 2",
+					"stroke-width": 0.5
+				},
+				"tick": {
+					"spacing": 1,
+					"size": 15
+				},
+				"min": 2018,
+				"max": 2023
+			},
+			"y": {
+				"title": {
+						"label": "Percentage of Population (%)"	
+				},
+				"grid": {
+					"show": true
+				},
+				"tick": {
+					"spacing": 2
+				},
+				"min": 0,
+				"max": 16
+			}
+		},
+		"series": [{
+				"title": "20 to 29 years",
+				"x": "Year",
+				"y": "Females→20 to 29",
+				"tooltip": "Age: 20 to 29<br />{{ Year }}: {{ Females→20 to 29 | toFixed(1) }}%"
+			},
+			{
+				"title": "30 to 39 years",
+				"x": "Year",
+				"y": "Females→30 to 39",
+				"tooltip": "Age: 30 to 39<br />{{ Year }}: {{ Females→30 to 39 | toFixed(1) }}%"
+			},
+			{
+				"title": "40 to 49 years",
+				"x": "Year",
+				"y": "Females→40 to 49",
+				"tooltip": "Age: 40 to 49<br />{{ Year }}: {{ Females→40 to 49 | toFixed(1) }}%"
+			},
+			{
+				"title": "50 to 59 years",
+				"x": "Year",
+				"y": "Females→50 to 59",
+				"tooltip": "Age: 50 to 59<br />{{ Year }}: {{ Females→50 to 59 | toFixed(1) }}%"
+			},
+			{
+				"title": "60 to 69 years",
+				"x": "Year",
+				"y": "Females→60 to 69",
+				"tooltip": "Age: 60 to 69<br />{{ Year }}: {{ Females→60 to 69 | toFixed(1) }}%"
+			},
+			{
+				"title": "70 to 79 years",
+				"x": "Year",
+				"y": "Females→70 to 79",
+				"tooltip": "Age: 70 to 79<br />{{ Year }}: {{ Females→70 to 79 | toFixed(1) }}%"
+			
+			}
+			]
+	}
+	} %}
+	{% endcomp %}
+{% endcomp %} 
+
+{% comp "dashboard.pane", { bg: "black", fg: 'white' }%}
+<h3>Percentage of young women accessing secondary mental health services, by age</h3>
+	{% comp 'oi.chart.line', { "config": 
+	{
+		"data": "nhs.mental_health_bulletin.secondary_care_gender_age",
+		width: 850,
+    	height: 500,
+		"legend": {
+			"show": true,
+			"direction": "horizontal"
+		},
+		"axis": {
+			"x": {
+				"title": {
+					"label": "Year"
+				},
+				"grid": {
+					"stroke-dasharray": "6 2",
+					"stroke-width": 0.5
+				},
+				"tick": {
+					"spacing": 1,
+					"size": 15
+				},
+				"min": 2018,
+				"max": 2023
+			},
+			"y": {
+				"title": {
+						"label": "Percentage of Population (%)"	
+				},
+				"grid": {
+					"show": true
+				},
+				"tick": {
+					"spacing": 2
+				},
+				"min": 0,
+				"max": 30
+			}
+		},
+		"series": [{
+				"title": "0 to 5 years",
+				"x": "Year",
+				"y": "Females→0 to 5",
+				"tooltip": "Age: 0 to 5<br />{{ Year }}: {{ Females→0 to 5 | toFixed(1) }}%"
+			},
+			{
+				"title": "11 to 15 years",
+				"x": "Year",
+				"y": "Females→11 to 15",
+				"tooltip": "Age: 11 to 15<br />{{ Year }}: {{ Females→11 to 15 | toFixed(1) }}%"
+			},
+			{
+				"title": "16 years",
+				"x": "Year",
+				"y": "Females→16",
+				"tooltip": "Age: 16<br />{{ Year }}: {{ Females→16 | toFixed(1) }}%"
+			},
+			{
+				"title": "17 years",
+				"x": "Year",
+				"y": "Females→17",
+				"tooltip": "Age: 17<br />{{ Year }}: {{ Females→17 | toFixed(1) }}%"
+			},
+			{
+				"title": "18 years",
+				"x": "Year",
+				"y": "Females→18",
+				"tooltip": "Age: 18<br />{{ Year }}: {{ Females→18 | toFixed(1) }}%"
+			},
+			{
+				"title": "19 years",
+				"x": "Year",
+				"y": "Females→19",
+				"tooltip": "Age: 19<br />{{ Year }}: {{ Females→19 | toFixed(1) }}%"
+			
+			}
+			]
+	}
+	} %}
+	{% endcomp %}
+{% endcomp %} 
+
 {% endcomp %} 
 
 
 
-{{ comp.oi.viz.chart.line({ config: {
-      title: 'Total online audience',
-      categories: search.data('working/social-media').all_weekly.columns.week_ending,
-      width: 25,
-      height: 8,
-      text: { colour: 'white' },
-      xAxis: {
-          title: 'Week ending (Sunday)',
-          titleOffset: 4.2,
-          labelRotate: 35,
-          majorTick: 4,
-          formatter: dateFormatter
-      },
-      yAxis: {
-          title: 'Total Audience',
-          titleOffset: 3.4,
-          majorTick: 5000
-      },
-      plotArea: {
-          yMin: 0,
-          yMax: 50000,
-          colour: 'var(--l23-dark-blue-grey)'
-      },
-      padding: {
-          left: 4,
-          bottom: 5
-      },
-      series: [
-          {
-          id: "all", label: "All",
-          yValues: search.data('metrics/social-media').all_weekly.columns.audience_last,
-          colour: all_colour,
-          markerOptions: { s: 5 }
-          },
-          {
-          id: "twitter", label: "Twitter",
-          yValues: search.data('metrics/social-media').service.twitter_weekly.columns.audience_last,
-          colour: twitter_colour,
-          markerOptions: { s: 5 }
-          },
-          {
-          id: "instagram", label: "Instagram",
-          yValues: search.data('metrics/social-media').service.instagram_weekly.columns.audience_last,
-          colour: instagram_colour,
-          markerOptions: { s: 5 }
-          },
-          {
-          id: "facebook", label: "Facebook",
-          yValues: search.data('metrics/social-media').service.facebook_weekly.columns.audience_last,
-          colour: facebook_colour,
-          markerOptions: { s: 5 }
-          },
-          {
-          id: "linkedin", label: "Linkedin",
-          yValues: search.data('metrics/social-media').service.linkedin_weekly.columns.audience_last,
-          colour: linkedin_colour,
-          markerOptions: { s: 5 }
-          }
-      ],
-      legend: {
-          width: "20em"
-      }
-    } }) | safe }}
+    
