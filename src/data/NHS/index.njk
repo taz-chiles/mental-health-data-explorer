@@ -1,19 +1,239 @@
 ---
-title: NHS
+title: NHS Mental Health Bulletin
 description: |
   Presenting NHS statistics.
 ---
 
 <p>The visualisations on this page present data on NHS-funded mental health services in the UK, presenting data published by the National Health Service.</p>
 
+<p>Data comes from the <a href="https://digital.nhs.uk/data-and-information/publications/statistical/mental-health-bulletin/2022-23-annual-report">Mental Health Bulletin, 2022-23 Annual report</a>, published 22 Feb 2024.</p>
+
+{% comp "contents"%}
+    <p>Percentage of population in contact with NHS funded secondary mental health services by gender and age:</p>
+	<ul>
+		<li><a href="#Total">All people</a></li>
+		<li><a href="#Total">Females</a></li>
+		<li><a href="#Total">Males</a></li>
+	</ul>
+	<p>Rates of access to secondary mental health services per 100,000 population by ethnicity:</p>
+{% endcomp %}
 
 <h2>NHS Secondary Mental Health Services</h2>
 
 <p>The charts below show the proportion of the UK population in contact with NHS funded secondary mental health, learning disabilities and autism services by gender and age group, 2017-18 to 2022-23.</p>
 
-<p>Data comes from the <a href="https://digital.nhs.uk/data-and-information/publications/statistical/mental-health-bulletin/2022-23-annual-report">Mental Health Bulletin, 2022-23 Annual report</a>, published 22 Feb 2024.</p>
+<h3>Total</h3>
 
-<h3>Percentage of population accessing NHS secondary mental health services, by age and gender.</h3>
+{% comp "dashboard.panels", { columns: 1 } %}
+
+	{% comp "dashboard.pane", { fg: 'white' }%}
+	<h3>Percentage of UK adults accessing secondary mental health services, by age</h3>
+	<p>Time series for the proportion of UK adults (20 years and over) in contact with NHS funded secondary mental health, learning disabilities and autism services by age group, 2017-18 to 2022-23.</p>
+
+		{% comp 'oi.chart.line', { "config": 
+		{
+			"data": "nhs.mental_health_bulletin.secondary_care_gender_age",
+			width: 850,
+			height: 500,
+			"legend": {
+				"show": true,
+				"direction": "horizontal"
+			},
+			"axis": {
+				"x": {
+					"title": {
+						"label": "Year"
+					},
+					"grid": {
+						"stroke-dasharray": "6 2",
+						"stroke-width": 0.5
+					},
+					"tick": {
+						"spacing": 1,
+						"size": 15
+					},
+					"min": 2018,
+					"max": 2023
+				},
+				"y": {
+					"title": {
+							"label": "Percentage of Population (%)"	
+					},
+					"grid": {
+						"show": true
+					},
+					"tick": {
+						"spacing": 2
+					},
+					"min": 0,
+					"max": 16
+				}
+			},
+			"series": [{
+					"title": "20 to 29 years",
+					"x": "Year",
+					"y": "Total→20 to 29",
+					"tooltip": "Age: 20 to 29<br />{{ Year }}: {{ Total→20 to 29 | toFixed(1) }}%",
+					"line": {
+						"curvature": 0.5
+					}
+				},
+				{
+					"title": "30 to 39 years",
+					"x": "Year",
+					"y": "Total→30 to 39",
+					"tooltip": "Age: 30 to 39<br />{{ Year }}: {{ Total→30 to 39 | toFixed(1) }}%",
+					"line": {
+						"curvature": 0.5
+					}
+				},
+				{
+					"title": "40 to 49 years",
+					"x": "Year",
+					"y": "Total→40 to 49",
+					"tooltip": "Age: 40 to 49<br />{{ Year }}: {{ Total→40 to 49 | toFixed(1) }}%",
+					"line": {
+						"curvature": 0.5
+					}
+				},
+				{
+					"title": "50 to 59 years",
+					"x": "Year",
+					"y": "Total→50 to 59",
+					"tooltip": "Age: 50 to 59<br />{{ Year }}: {{ Total→50 to 59 | toFixed(1) }}%",
+					"line": {
+						"curvature": 0.5
+					}
+				},
+				{
+					"title": "60 to 69 years",
+					"x": "Year",
+					"y": "Total→60 to 69",
+					"tooltip": "Age: 60 to 69<br />{{ Year }}: {{ Total→60 to 69 | toFixed(1) }}%",
+					"line": {
+						"curvature": 0.5
+					}
+				},
+				{
+					"title": "70 to 79 years",
+					"x": "Year",
+					"y": "Total→70 to 79",
+					"tooltip": "Age: 70 to 79<br />{{ Year }}: {{ Total→70 to 79 | toFixed(1) }}%",
+					"line": {
+						"curvature": 0.5
+					}
+				}
+				]
+		}
+		} %}
+		{% endcomp %}
+		{% endcomp %}
+
+		{% comp "dashboard.pane", { fg: 'white' }%}
+		<h3>Percentage of UK young people accessing secondary mental health services</h3>
+		<p>Time series for the proportion of the young people (19 years and under) in contact with NHS funded secondary mental health, learning disabilities and autism services by age group, 2017-18 to 2022-23.</p>
+		{% comp 'oi.chart.line', { "config": 
+		{
+			"data": "nhs.mental_health_bulletin.secondary_care_gender_age",
+			width: 850,
+			height: 500,
+			"legend": {
+				"show": true,
+				"direction": "horizontal"
+			},
+			"axis": {
+				"x": {
+					"title": {
+						"label": "Year"
+					},
+					"grid": {
+						"stroke-dasharray": "6 2",
+						"stroke-width": 0.1
+					},
+					"tick": {
+						"spacing": 1,
+						"size": 15
+					},
+					"min": 2018,
+					"max": 2023
+				},
+				"y": {
+					"title": {
+							"label": "Percentage of Population (%)"	
+					},
+					"grid": {
+						"show": true
+					},
+					"tick": {
+						"spacing": 2
+					},
+					"min": 0,
+					"max": 30
+				}
+			},
+			"series": [{
+					"title": "0 to 5 years",
+					"x": "Year",
+					"y": "Total→0 to 5",
+					"tooltip": "Age: 0 to 5<br />{{ Year }}: {{ Total→0 to 5 | toFixed(1) }}%",
+					"line": {
+						"curvature": 0.5
+					}
+				},
+				{
+					"title": "11 to 15 years",
+					"x": "Year",
+					"y": "Total→11 to 15",
+					"tooltip": "Age: 11 to 15<br />{{ Year }}: {{ Total→11 to 15 | toFixed(1) }}%",
+					"line": {
+						"curvature": 0.5
+					}
+				},
+				{
+					"title": "16 years",
+					"x": "Year",
+					"y": "Total→16",
+					"tooltip": "Age: 16<br />{{ Year }}: {{ Total→16 | toFixed(1) }}%",
+					"line": {
+						"curvature": 0.5
+					}
+				},
+				{
+					"title": "17 years",
+					"x": "Year",
+					"y": "Total→17",
+					"tooltip": "Age: 17<br />{{ Year }}: {{ Total→17 | toFixed(1) }}%",
+					"line": {
+						"curvature": 0.5
+					}
+				},
+				{
+					"title": "18 years",
+					"x": "Year",
+					"y": "Total→18",
+					"tooltip": "Age: 18<br />{{ Year }}: {{ Total→18 | toFixed(1) }}%",
+					"line": {
+						"curvature": 0.5
+					}
+				},
+				{
+					"title": "19 years",
+					"x": "Year",
+					"y": "Total→19",
+					"tooltip": "Age: 19<br />{{ Year }}: {{ Total→19 | toFixed(1) }}%",
+					"line": {
+						"curvature": 0.5
+					}
+				
+				}
+				]
+		}
+		} %}
+		{% endcomp %}
+	{% endcomp %} 
+{% endcomp %} 
+
+<h3>Females</h3>
 
 {% comp "dashboard.panels", { columns: 1 } %}
 
@@ -62,37 +282,55 @@ description: |
 				"title": "20 to 29 years",
 				"x": "Year",
 				"y": "Females→20 to 29",
-				"tooltip": "Age: 20 to 29<br />{{ Year }}: {{ Females→20 to 29 | toFixed(1) }}%"
+				"tooltip": "Age: 20 to 29<br />{{ Year }}: {{ Females→20 to 29 | toFixed(1) }}%",
+				"line": {
+					"curvature": 0.5
+				}
 			},
 			{
 				"title": "30 to 39 years",
 				"x": "Year",
 				"y": "Females→30 to 39",
-				"tooltip": "Age: 30 to 39<br />{{ Year }}: {{ Females→30 to 39 | toFixed(1) }}%"
+				"tooltip": "Age: 30 to 39<br />{{ Year }}: {{ Females→30 to 39 | toFixed(1) }}%",
+				"line": {
+					"curvature": 0.5
+				}
 			},
 			{
 				"title": "40 to 49 years",
 				"x": "Year",
 				"y": "Females→40 to 49",
-				"tooltip": "Age: 40 to 49<br />{{ Year }}: {{ Females→40 to 49 | toFixed(1) }}%"
+				"tooltip": "Age: 40 to 49<br />{{ Year }}: {{ Females→40 to 49 | toFixed(1) }}%",
+				"line": {
+					"curvature": 0.5
+				}
 			},
 			{
 				"title": "50 to 59 years",
 				"x": "Year",
 				"y": "Females→50 to 59",
-				"tooltip": "Age: 50 to 59<br />{{ Year }}: {{ Females→50 to 59 | toFixed(1) }}%"
+				"tooltip": "Age: 50 to 59<br />{{ Year }}: {{ Females→50 to 59 | toFixed(1) }}%",
+				"line": {
+					"curvature": 0.5
+				}
 			},
 			{
 				"title": "60 to 69 years",
 				"x": "Year",
 				"y": "Females→60 to 69",
-				"tooltip": "Age: 60 to 69<br />{{ Year }}: {{ Females→60 to 69 | toFixed(1) }}%"
+				"tooltip": "Age: 60 to 69<br />{{ Year }}: {{ Females→60 to 69 | toFixed(1) }}%",
+				"line": {
+					"curvature": 0.5
+				}
 			},
 			{
 				"title": "70 to 79 years",
 				"x": "Year",
 				"y": "Females→70 to 79",
-				"tooltip": "Age: 70 to 79<br />{{ Year }}: {{ Females→70 to 79 | toFixed(1) }}%"
+				"tooltip": "Age: 70 to 79<br />{{ Year }}: {{ Females→70 to 79 | toFixed(1) }}%",
+				"line": {
+					"curvature": 0.5
+				}
 			
 			}
 			]
@@ -103,6 +341,114 @@ description: |
 
 {% comp "dashboard.pane", { fg: 'white' }%}
 <h3>Percentage of young women accessing secondary mental health services, by age</h3>
+	{% comp 'oi.chart.line', { "config": 
+	{
+		"data": "nhs.mental_health_bulletin.secondary_care_gender_age",
+		width: 850,
+    	height: 500,
+		"legend": {
+			"show": true,
+			"direction": "horizontal"
+		},
+		"axis": {
+			"x": {
+				"title": {
+					"label": "Year"
+				},
+				"grid": {
+					"stroke-dasharray": "6 2",
+					"stroke-width": 0.1
+				},
+				"tick": {
+					"spacing": 1,
+					"size": 15
+				},
+				"min": 2018,
+				"max": 2023
+			},
+			"y": {
+				"title": {
+						"label": "Percentage of Population (%)"	
+				},
+				"grid": {
+					"show": true
+				},
+				"tick": {
+					"spacing": 2
+				},
+				"min": 0,
+				"max": 30
+			}
+		},
+		"series": [{
+				"title": "0 to 5 years",
+				"x": "Year",
+				"y": "Females→0 to 5",
+				"tooltip": "Age: 0 to 5<br />{{ Year }}: {{ Females→0 to 5 | toFixed(1) }}%",
+				"line": {
+					"curvature": 0.5
+				}
+			},
+			{
+				"title": "11 to 15 years",
+				"x": "Year",
+				"y": "Females→11 to 15",
+				"tooltip": "Age: 11 to 15<br />{{ Year }}: {{ Females→11 to 15 | toFixed(1) }}%",
+				"line": {
+					"curvature": 0.5
+				}
+			},
+			{
+				"title": "16 years",
+				"x": "Year",
+				"y": "Females→16",
+				"tooltip": "Age: 16<br />{{ Year }}: {{ Females→16 | toFixed(1) }}%",
+				"line": {
+					"curvature": 0.5
+				}
+			},
+			{
+				"title": "17 years",
+				"x": "Year",
+				"y": "Females→17",
+				"tooltip": "Age: 17<br />{{ Year }}: {{ Females→17 | toFixed(1) }}%",
+				"line": {
+					"curvature": 0.5
+				}
+			},
+			{
+				"title": "18 years",
+				"x": "Year",
+				"y": "Females→18",
+				"tooltip": "Age: 18<br />{{ Year }}: {{ Females→18 | toFixed(1) }}%",
+				"line": {
+					"curvature": 0.5
+				}
+			},
+			{
+				"title": "19 years",
+				"x": "Year",
+				"y": "Females→19",
+				"tooltip": "Age: 19<br />{{ Year }}: {{ Females→19 | toFixed(1) }}%",
+				"line": {
+					"curvature": 0.5
+				}
+			
+			}
+			]
+	}
+	} %}
+	{% endcomp %}
+{% endcomp %} 
+
+{% endcomp %} 
+
+<h3>Males</h3>
+
+{% comp "dashboard.panels", { columns: 1 } %}
+
+{% comp "dashboard.pane", { fg: 'white' }%}
+<h3>Percentage of adult men accessing secondary mental health services, by age</h3>
 	{% comp 'oi.chart.line', { "config": 
 	{
 		"data": "nhs.mental_health_bulletin.secondary_care_gender_age",
@@ -139,44 +485,62 @@ description: |
 					"spacing": 2
 				},
 				"min": 0,
-				"max": 30
+				"max": 16
 			}
 		},
 		"series": [{
-				"title": "0 to 5 years",
+				"title": "20 to 29 years",
 				"x": "Year",
-				"y": "Females→0 to 5",
-				"tooltip": "Age: 0 to 5<br />{{ Year }}: {{ Females→0 to 5 | toFixed(1) }}%"
+				"y": "Males→20 to 29",
+				"tooltip": "Age: 20 to 29<br />{{ Year }}: {{ Males→20 to 29 | toFixed(1) }}%",
+				"line": {
+					"curvature": 0.5
+				}
 			},
 			{
-				"title": "11 to 15 years",
+				"title": "30 to 39 years",
 				"x": "Year",
-				"y": "Females→11 to 15",
-				"tooltip": "Age: 11 to 15<br />{{ Year }}: {{ Females→11 to 15 | toFixed(1) }}%"
+				"y": "Males→30 to 39",
+				"tooltip": "Age: 30 to 39<br />{{ Year }}: {{ Males→30 to 39 | toFixed(1) }}%",
+				"line": {
+					"curvature": 0.5
+				}
 			},
 			{
-				"title": "16 years",
+				"title": "40 to 49 years",
 				"x": "Year",
-				"y": "Females→16",
-				"tooltip": "Age: 16<br />{{ Year }}: {{ Females→16 | toFixed(1) }}%"
+				"y": "Males→40 to 49",
+				"tooltip": "Age: 40 to 49<br />{{ Year }}: {{ Males→40 to 49 | toFixed(1) }}%",
+				"line": {
+					"curvature": 0.5
+				}
 			},
 			{
-				"title": "17 years",
+				"title": "50 to 59 years",
 				"x": "Year",
-				"y": "Females→17",
-				"tooltip": "Age: 17<br />{{ Year }}: {{ Females→17 | toFixed(1) }}%"
+				"y": "Males→50 to 59",
+				"tooltip": "Age: 50 to 59<br />{{ Year }}: {{ Males→50 to 59 | toFixed(1) }}%",
+				"line": {
+					"curvature": 0.5
+				}
 			},
 			{
-				"title": "18 years",
+				"title": "60 to 69 years",
 				"x": "Year",
-				"y": "Females→18",
-				"tooltip": "Age: 18<br />{{ Year }}: {{ Females→18 | toFixed(1) }}%"
+				"y": "Males→60 to 69",
+				"tooltip": "Age: 60 to 69<br />{{ Year }}: {{ Males→60 to 69 | toFixed(1) }}%",
+				"line": {
+					"curvature": 0.5
+				}
 			},
 			{
-				"title": "19 years",
+				"title": "70 to 79 years",
 				"x": "Year",
-				"y": "Females→19",
-				"tooltip": "Age: 19<br />{{ Year }}: {{ Females→19 | toFixed(1) }}%"
+				"y": "Males→70 to 79",
+				"tooltip": "Age: 70 to 79<br />{{ Year }}: {{ Males→70 to 79 | toFixed(1) }}%",
+				"line": {
+					"curvature": 0.5
+				}
 			
 			}
 			]
@@ -185,7 +549,112 @@ description: |
 	{% endcomp %}
 {% endcomp %} 
 
+{% comp "dashboard.pane", { fg: 'white' }%}
+<h3>Percentage of young men accessing secondary mental health services, by age</h3>
+	{% comp 'oi.chart.line', { "config": 
+	{
+		"data": "nhs.mental_health_bulletin.secondary_care_gender_age",
+		width: 850,
+    	height: 500,
+		"legend": {
+			"show": true,
+			"direction": "horizontal"
+		},
+		"axis": {
+			"x": {
+				"title": {
+					"label": "Year"
+				},
+				"grid": {
+					"stroke-dasharray": "6 2",
+					"stroke-width": 0.1
+				},
+				"tick": {
+					"spacing": 1,
+					"size": 15
+				},
+				"min": 2018,
+				"max": 2023
+			},
+			"y": {
+				"title": {
+						"label": "Percentage of Population (%)"	
+				},
+				"grid": {
+					"show": true
+				},
+				"tick": {
+					"spacing": 2
+				},
+				"min": 0,
+				"max": 30
+			}
+		},
+		"series": [{
+				"title": "0 to 5 years",
+				"x": "Year",
+				"y": "Males→0 to 5",
+				"tooltip": "Age: 0 to 5<br />{{ Year }}: {{ Males→0 to 5 | toFixed(1) }}%",
+				"line": {
+					"curvature": 0.5
+				}
+			},
+			{
+				"title": "11 to 15 years",
+				"x": "Year",
+				"y": "Males→11 to 15",
+				"tooltip": "Age: 11 to 15<br />{{ Year }}: {{ Males→11 to 15 | toFixed(1) }}%",
+				"line": {
+					"curvature": 0.5
+				}
+			},
+			{
+				"title": "16 years",
+				"x": "Year",
+				"y": "Males→16",
+				"tooltip": "Age: 16<br />{{ Year }}: {{ Males→16 | toFixed(1) }}%",
+				"line": {
+					"curvature": 0.5
+				}
+			},
+			{
+				"title": "17 years",
+				"x": "Year",
+				"y": "Males→17",
+				"tooltip": "Age: 17<br />{{ Year }}: {{ Males→17 | toFixed(1) }}%",
+				"line": {
+					"curvature": 0.5
+				}
+			},
+			{
+				"title": "18 years",
+				"x": "Year",
+				"y": "Males→18",
+				"tooltip": "Age: 18<br />{{ Year }}: {{ Males→18 | toFixed(1) }}%",
+				"line": {
+					"curvature": 0.5
+				}
+			},
+			{
+				"title": "19 years",
+				"x": "Year",
+				"y": "Males→19",
+				"tooltip": "Age: 19<br />{{ Year }}: {{ Males→19 | toFixed(1) }}%",
+				"line": {
+					"curvature": 0.5
+				}
+			
+			}
+			]
+	}
+	} %}
+	{% endcomp %}
 {% endcomp %} 
+{% endcomp %} 
+
+<h3>Rates of access to secondary mental health services per 100,000 population by ethnicity</h3>
+
+
 
 
 
