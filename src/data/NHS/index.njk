@@ -4,25 +4,37 @@ description: |
   Presenting NHS statistics.
 ---
 
-<p>The visualisations on this page present data on NHS-funded mental health services in the UK, presenting data published by the National Health Service.</p>
+<p>The visualisations on this page present data on NHS-funded mental health services in the UK, using data published by the National Health Service.</p>
 
 <p>Data comes from the <a href="https://digital.nhs.uk/data-and-information/publications/statistical/mental-health-bulletin/2022-23-annual-report">Mental Health Bulletin, 2022-23 Annual report</a>, published 22 Feb 2024.</p>
 
-{% comp "contents"%}
-    <p>Percentage of population in contact with NHS funded secondary mental health services by gender and age:</p>
-	<ul>
-		<li><a href="#Total">All people</a></li>
-		<li><a href="#Total">Females</a></li>
-		<li><a href="#Total">Males</a></li>
-	</ul>
-	<p>Rates of access to secondary mental health services per 100,000 population by ethnicity:</p>
-{% endcomp %}
+<p>The NHS Mental Health Bulletin is an annual publication produced by <a href="https://digital.nhs.uk">NHS Digital</a>, providing statistics and analysis on access and usage of mental health services offered by the NHS.</p>
 
 <h2>NHS Secondary Mental Health Services</h2>
 
+<p>NHS secondary mental health services in the UK are specialized services that provide care and support for mental health. These services typically require a referral from a primary care provider, such as a GP, and offer a range of interventions and treatments designed to address various mental health concerns.</p>
+
+{% comp "contents"%}
+    {% comp "dashboard.listing-pane" %}
+	<h2>Age & Gender</h2>
+	<p>Explore access to secondary mental health services by age and gender</p>
+	{% endcomp %}
+	{% comp "dashboard.listing-pane" %}
+	<h2>Ethnicity</h2>
+	<p>Explore rates of access to secondary mental health services by ethnicity</p>
+	{% endcomp %}
+	{% comp "dashboard.listing-pane" %}
+	<h2>Deprivation</h2>
+	<p>The number of people accessing secondary care by Indices of Multiple Deprivation</p>
+	{% endcomp %}
+{% endcomp %}
+
+<h2>Access by age and gender</h2>
+
+
 <p>The charts below show the proportion of the UK population in contact with NHS funded secondary mental health, learning disabilities and autism services by gender and age group, 2017-18 to 2022-23.</p>
 
-<h3>Total</h3>
+<h3>All people</h3>
 
 {% comp "dashboard.panels", { columns: 1 } %}
 
@@ -652,7 +664,9 @@ description: |
 {% endcomp %} 
 {% endcomp %} 
 
-<h3>Rates of access to secondary mental health services per 100,000 population by ethnicity</h3>
+<h3>Access by ethnicity</h3>
+
+
 
 
 

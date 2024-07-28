@@ -1,6 +1,6 @@
 <nav class='table-of-contents'>
-  <h2>{{ title or 'Contents' }}</h2>
-  <ul>
+  <h2>{{ title or 'Explore' }}</h2>
+{% comp "dashboard.panels", { columns: 3 } %}
       {{ content | safe }}
-  </ul>
+{% endcomp %}
 </nav>

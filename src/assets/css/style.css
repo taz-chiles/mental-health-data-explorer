@@ -147,7 +147,7 @@ section { padding: 2em 0; }
 .table-of-contents {
     padding:2em;
 	margin-top:2em;
-	border-style: groove;
+	border-style: solid;
     border-width: 1px;
     border-color: #bbbbbb;
   }
@@ -162,7 +162,7 @@ section { padding: 2em 0; }
   }
 
   .table-of-contents ul { 
-	list-style:inside;
+	list-style:none;
   }
 
   .table-of-contents li { 
