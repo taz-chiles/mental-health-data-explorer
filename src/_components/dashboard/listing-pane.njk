@@ -1,0 +1,7 @@
+<li class="listing-pane" style ="
+    {% if bg %}background: {{ bg }}!important;{% endif %}
+">
+{%-if link -%}<a class="impact-link" href="{{ link | url }}">{%- endif -%}
+  {{ content | safe }}
+{%-if link -%}</a>{%- endif -%}
+</li>
