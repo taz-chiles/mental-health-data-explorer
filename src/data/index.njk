@@ -3,17 +3,12 @@ title: Data
 page: data
 ---
 
-<p>
-    This is where the data will live.
-</p>
-
 {% comp "dashboard.panels", { columns: 4 } %}
 
-	{% comp "dashboard.pane", { fg: 'white', link: "/data/nhs/" }%}
+	{% comp "dashboard.listing-pane", { fg: 'white', link: "/data/nhs/" }%}
 
-    <h2>NHS Statistics</h2>
-
-
+    <h2>NHS</h2>
+    <p>Mental Health Bulletin 2022-23</p>
 
     {% endcomp %}
 {% endcomp %}
